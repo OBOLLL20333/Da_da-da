@@ -40,6 +40,7 @@ body {
 
 .wrapper {
 	min-height: 100%;
+	min-width: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -75,16 +76,138 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
 .main-scrceen {
 	flex: 1 0 100%;
 	position: relative;
 }
+
 .main-screen__bg {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
+}
+.main-screen__image {
+	position: relative;
+}
+.main-screen__image_one {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 0;
+	left: 0;
+	animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+	100%,
+	0% {
+		top: 0;
+		left: 0;
+		transform: rotate(0deg);
+	}
+	25% {
+		top: 0vh;
+		left: 40vw;
+		transform: rotate(45deg);
+	}
+	50% {
+		top: 70vh;
+		left: 50vw;
+		transform: rotate(-45deg);
+	}
+	75% {
+		top: 70vh;
+		left: 10vw;
+		transform: rotate(45deg);
+	}
+}
+.main-screen__image_two {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	top: 60vh;
+	left: 80vw;
+	animation: animate2 30s linear infinite;
+}
+@keyframes animate2 {
+	100%,
+	0% {
+		top: 60vh;
+		left: 80vw;
+		transform: rotate(0deg);
+	}
+	25% {
+		top: 10vh;
+		left: 50vw;
+		transform: rotate(-45deg);
+	}
+	50% {
+		top: 70vh;
+		left: 50vw;
+		transform: rotate(45deg);
+	}
+	75% {
+		top: 10vh;
+		left: 80vw;
+		transform: rotate(-45deg);
+	}
+}
+.main-block__image {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: 0;
+	left: 0;
+	animation: animate3 20s linear infinite;
+	z-index: 50;
+}
+@keyframes animate3 {
+	100%,
+	0% {
+		top: 0;
+		left: 0;
+		transform: rotate(0deg);
+	}
+	25% {
+		top: 0vh;
+		left: 80vw;
+		transform: rotate(45deg);
+	}
+	50% {
+		top: 70vh;
+		left: 80vw;
+		transform: rotate(-45deg);
+	}
+	75% {
+		top: 70vh;
+		left: 20vw;
+		transform: rotate(45deg);
+	}
+}
+.main-screen__title {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 75%;
+	left: 75px;
+	z-index: 50;
+	color: #fff;
+	font-size: 48px;
+	font-weight: 700;
+}
+.main-screen__text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 85%;
+	left: 75px;
+	z-index: 50;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
 }
 
 /* ------------------------------------------------------------------------------------- */
@@ -99,7 +222,7 @@ body {
 }
 .haeder__container {
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 }
 .haeder__logo {
@@ -142,6 +265,7 @@ body {
 }
 
 .main-block {
+	position: relative;
 }
 .main-block__container {
 }
