@@ -35,12 +35,13 @@ body {
 	font-weight: 500;
 	font-family: Montserrat;
 	background-color: #fafafa;
+	margin: 0%;
+	overflow-x: hidden;
 }
 /* --------------------------------------------------------------------------------------------------- */
 
 .wrapper {
 	min-height: 100%;
-	min-width: 100%;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -187,27 +188,29 @@ body {
 		transform: rotate(45deg);
 	}
 }
-.main-screen__title {
+.main-screen__content {
 	position: absolute;
-	width: 100%;
-	height: 100%;
 	top: 75%;
 	left: 75px;
-	z-index: 50;
-	color: #fff;
-	font-size: 48px;
+	z-index: 2;
 	font-weight: 700;
+	color: #fff;
+}
+.main-screen__title {
+	font-size: 48px;
+	transform: translate(0px, 120%);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+}
+.main-screen__title:not(:last-child) {
+	padding: 0px 0px 20px 0px;
+}
+.main-screen__title._active {
+	transform: translate(0px, 0px);
+	opacity: 1;
 }
 .main-screen__text {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 85%;
-	left: 75px;
-	z-index: 50;
-	color: #fff;
 	font-size: 36px;
-	font-weight: 700;
 }
 
 /* ------------------------------------------------------------------------------------- */
@@ -319,22 +322,5 @@ body {
 .item-main-block__text {
 	padding: 20px 0px 0px 0px;
 	color: #fff;
-}
-
-.blink-1 {
-	animation-name: blink;
-	animation-timing-function: linear;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-}
-.blink-2 {
-	animation-name: blink;
-	animation-timing-function: linear;
-	animation-duration: 0.3s;
-	animation-iteration-count: infinite;
-}
-@keyframes blink {
-	50% {
-		opacity: 0;
-	}
+	transition: all 0.8s ease 0s;
 }

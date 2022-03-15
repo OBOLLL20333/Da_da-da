@@ -46,12 +46,6 @@
 		ctx.fillRect(0, 0, w, h);
 	}
 
-	function func() {
-		if (ctx.fillStyle = properties.particleColor == "rgba(230, 230, 238, 1)") ctx.fillStyle = properties.particleColor = "rgba(76, 76, 177, 1)";
-		else ctx.fillStyle = properties.particleColor = "rgba(230, 230, 238, 1)";
-		setTimeout(func, 500);
-	}
-
 	function reDrawParticles() {
 		for (var i in particles) {
 			particles[i].position();
@@ -73,4 +67,28 @@
 	}
 
 	init();
-}())
+}());
+
+const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	function animOnScroll(params) {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+}
