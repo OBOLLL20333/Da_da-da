@@ -105,7 +105,9 @@ if (animItems.length > 0) {
 		animOnScroll();
 	}, 300);
 	const button = document.querySelector('.button');
-	const poihali = document.querySelector('.main-screen__image_one')
+	const poihali = document.querySelector('.main-screen__image_one');
+	const rotaite = document.querySelector('.haeder__logo');
+	const rotut = document.querySelector('.main-screen__image_two');
 
 	button.onclick = function () {
 		poihali.classList.remove('_poihali');
@@ -113,5 +115,12 @@ if (animItems.length > 0) {
 		setTimeout(() => {
 			poihali.classList.remove('_poihali');
 		}, 5000);
+	}
+	rotaite.onclick = function () {
+		rotaite.classList.remove('_rotaite');
+		rotaite.classList.add('_rotaite');
+		setTimeout(() => {
+			rotaite.classList.remove('_rotaite');
+		}, 1000);
 	}
 }
