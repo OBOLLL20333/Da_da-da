@@ -52,6 +52,21 @@ body {
 	margin: 0 auto;
 	box-sizing: content-box;
 }
+@media (max-width: 1200px) {
+	._container {
+		max-width: 970px;
+	}
+}
+@media (max-width: 992px) {
+	._container {
+		max-width: 750px;
+	}
+}
+@media (max-width: 767px) {
+	._container {
+		max-width: none;
+	}
+}
 ._anim-show {
 	transform: translate(0px, 120%);
 	opacity: 0;
@@ -105,8 +120,6 @@ body {
 }
 .main-screen__image_one {
 	position: absolute;
-	width: 300px;
-	height: 300px;
 	top: 0;
 	left: 0;
 	animation: animate 20s linear infinite;
@@ -139,29 +152,39 @@ body {
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	top: 60vh;
-	left: 80vw;
+	top: 0vh;
+	left: 0vw;
 	animation: animate2 30s linear infinite;
 }
 @keyframes animate2 {
 	100%,
 	0% {
-		top: 60vh;
-		left: 80vw;
+		top: 0vh;
+		left: 0vw;
 		transform: rotate(0deg);
 	}
-	25% {
-		top: 10vh;
-		left: 50vw;
+	15% {
+		top: 15vh;
+		left: 80vw;
 		transform: rotate(-45deg);
 	}
-	50% {
-		top: 70vh;
-		left: 50vw;
+	30% {
+		top: 30vh;
+		left: 10vw;
+		transform: rotate(45deg);
+	}
+	45% {
+		top: 45vh;
+		left: 80vw;
+		transform: rotate(-45deg);
+	}
+	60% {
+		top: 60vh;
+		left: 10vw;
 		transform: rotate(45deg);
 	}
 	75% {
-		top: 10vh;
+		top: 65vh;
 		left: 80vw;
 		transform: rotate(-45deg);
 	}
@@ -280,6 +303,7 @@ body {
 }
 
 .main-block {
+	padding: 50px 0px;
 	position: relative;
 }
 .main-block__container {
@@ -288,19 +312,22 @@ body {
 }
 .main-block__row {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin: 20px;
+	margin: 0 -20px;
 }
 .main-block__row_one {
 }
+.main-block__row_one:not(:last-child) {
+	margin-bottom: 50px;
+}
 .main-block__row_two {
+}
+.main-block__row_two:not(:last-child) {
+	margin-bottom: 50px;
 }
 
 .main-block__column {
-	padding: 0px 20px 20px 0px;
+	padding: 0px 20px;
+	display: flex;
 }
 .main-block__column_one {
 	flex: 0 1 33.333%;
@@ -310,18 +337,20 @@ body {
 }
 
 .main-block__item {
+	display: flex;
+	flex-direction: column;
 }
 
 .item-main-block {
 	background-color: #576a83;
 	border-radius: 5px;
+	padding: 20px;
 }
 .item-main-block_one {
 }
 .item-main-block_two {
 }
 .item-main-block__body {
-	padding: 20px;
 }
 .item-main-block__body_two {
 }
@@ -333,6 +362,7 @@ body {
 	border-radius: 5px;
 	overflow: hidden;
 }
+
 .item-main-block__image._active {
 	transform: scale(1);
 }
