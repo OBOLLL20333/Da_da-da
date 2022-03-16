@@ -104,5 +104,14 @@ if (animItems.length > 0) {
 	setTimeout(() => {
 		animOnScroll();
 	}, 300);
+	const button = document.querySelector('.button');
+	const poihali = document.querySelector('.main-screen__image_one')
 
+	button.onclick = function () {
+		poihali.classList.remove('_poihali');
+		poihali.classList.add('_poihali');
+		setTimeout(() => {
+			poihali.classList.remove('_poihali');
+		}, 5000);
+	}
 }
