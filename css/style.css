@@ -26,6 +26,9 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
+footer {
+	display: block;
+}
 html,
 body {
 	height: 100%;
@@ -358,6 +361,16 @@ body {
 
 /* ========================================================================== */
 .footer {
-	color: #000;
-	position: absolute;
+	background-color: #576a83;
+}
+.footer__content {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0px;
+}
+.footer__god {
+	padding: 0px 0px 0px 15px;
+}
+.footer__creater {
+	padding: 0px 30px 0px 0px;
 }
